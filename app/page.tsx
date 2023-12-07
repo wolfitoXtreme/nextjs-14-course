@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import NextJSLogo from '@/public/images/next.svg';
 import VercelLogo from '@/public/images/vercel.svg';
 
@@ -6,7 +8,7 @@ import styles from '@/styles/page.module.scss';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
+      <div className={classNames(styles.description, styles['description--test-variant'])}>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
