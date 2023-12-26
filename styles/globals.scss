@@ -1,53 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Quicksand, sans-serif;
 }
 
 body {
   margin: 0;
-  height: 100%;
-  color: #ddd8e4;
-  background: linear-gradient(180deg, #232029, #231e2d);
+  background: radial-gradient(#282c34, #282c34);
 }
 
-main {
-  margin: 5rem auto;
+.header-background {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 320px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.not-found,
+.error {
+  margin-top: 5rem;
   text-align: center;
 }
 
-main img {
-  width: 8rem;
-  height: 8rem;
-  object-fit: cover;
-  filter: drop-shadow(0 0 4px #f6c363);
+.not-found h1,
+.error h1 {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #262626;
+  background: linear-gradient(90deg, #f9572a, #ffc905);
+  background-clip: text;
+  background-position: center;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
 }
 
-h1 {
-  margin: 3rem auto;
-  font-family: Poppins, sans-serif;
-  font-size: 3rem;
-  color: #ede9f3;
-}
-
-p {
+.not-found p,
+.error p {
   font-size: 1.5rem;
-}
-
-p a {
-  padding-bottom: 0.05rem;
-  text-decoration: none;
-  color: #f4c33d;
-  border-bottom: 2px solid #f4c33d;
-}
-
-p a:hover,
-p a:active {
-  color: #bd3df4;
-  border-color: #bd3df4;
+  font-weight: 500;
+  color: #ddd8d8;
 }
