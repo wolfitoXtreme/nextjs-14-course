@@ -2,7 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+#### Initialize the data base:
+
+This projects uses `better-sqlite3`, the script to generate the database is located in the root directory under the name `initdb.ts`.
+
+To initialize the following command should be run within the terminal.
+
+```
+$ node initdb.ts
+```
+
+#### Run the development server:
 
 ```bash
 npm run dev
