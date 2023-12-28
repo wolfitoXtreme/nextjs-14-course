@@ -8,20 +8,17 @@ This projects uses `better-sqlite3`, the script to generate the database is loca
 
 To initialize the following command should be run within the terminal.
 
-```
-$ node initdb.ts
+```bash
+$node initdb.ts
 ```
 
-#### Run the development server:
+#### Development Scripts:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$yarn dev           # runs development server
+$yarn lint          # lint all files
+$yarn lint:fix      # lint and fixes all files (use with caution)
+$yarn lint-staged   # lint staged files
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -16,3 +16,8 @@ export interface IHeaderNavigationLink {
 export interface IMealsGrid {
   meals: TMealItem[];
 }
+
+export interface IImagePicker {
+  label: string;
+  name: string;
+}
