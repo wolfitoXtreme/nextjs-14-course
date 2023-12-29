@@ -7,10 +7,10 @@ import { TMealItem } from '@/types';
 import styles from './page.module.scss';
 
 const MealDetails = ({ params, params: { mealSlug } }: PageProps) => {
-  // eslint-disable-next-line no-console
-  console.log({ params });
-
   const meal = getMeal(mealSlug) as TMealItem;
+
+  // eslint-disable-next-line no-console
+  console.log({ params }, { meal });
 
   if (!meal) {
     notFound();

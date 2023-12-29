@@ -1,23 +1,28 @@
+import { shareMeal } from '@/lib/actions';
+
 import ImagePicker from '@/components/Meals/ImagePicker';
 
 import styles from './page.module.scss';
 
 const ShareMealPage: React.FC = () => {
-  const shareMeal = async (formData: FormData) => {
-    'use server';
+  // ---
+  // moved out to '@/lib/actions' (Might conflict with 'use client' and not ideal to have inside a component)
+  // ---
+  // const shareMeal = async (formData: FormData) => {
+  //   'use server';
 
-    const meal = {
-      title: formData.get('title'),
-      image: formData.get('image'),
-      summary: formData.get('summary'),
-      instructions: formData.get('instructions'),
-      creator: formData.get('creator'),
-      creator_email: formData.get('creator_email'),
-    };
+  //   const meal = {
+  //     title: formData.get('title'),
+  //     image: formData.get('image'),
+  //     summary: formData.get('summary'),
+  //     instructions: formData.get('instructions'),
+  //     creator: formData.get('creator'),
+  //     creator_email: formData.get('creator_email'),
+  //   };
 
-    // eslint-disable-next-line no-console
-    console.log('saved meal:', { meal }); // will log in the terminal 'use server'
-  };
+  //   // eslint-disable-next-line no-console
+  //   console.log('saved meal:', { meal }); // will log in the terminal 'use server'
+  // };
 
   return (
     <>
