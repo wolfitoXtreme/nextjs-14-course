@@ -1,10 +1,22 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { getMeal } from '@/lib/meals';
 import { TMealItem } from '@/types';
+import { composeMetadata } from '@/utils';
 
 import styles from './page.module.scss';
+
+export const generateMetadata = async ({
+  params: { mealSlug },
+}: PageProps): Promise<Metadata> => {
+  const meal = getMeal(mealSlug) as TMealItem;
+
+  return composeMetadata(
+    meal ? { title: meal.title, description: meal.summary } : {},
+  );
+};
 
 const MealDetails = ({ params, params: { mealSlug } }: PageProps) => {
   const meal = getMeal(mealSlug) as TMealItem;

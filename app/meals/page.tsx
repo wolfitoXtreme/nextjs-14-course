@@ -1,15 +1,23 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
 import { getMeals } from '@/lib/meals';
 import { TMealItem } from '@/types';
+import { composeMetadata } from '@/utils';
 
 import MealsGrid from '@/components/Meals/MealsGrid';
 
 import styles from './page.module.scss';
 
+export const metadata = (): Metadata =>
+  composeMetadata({ title: 'Browse delicious meals' });
+
 const Meals = async () => {
   const meals = (await getMeals()) as TMealItem[];
+
+  // eslint-disable-next-line no-console
+  console.log('getting meals');
 
   return <MealsGrid meals={meals} />;
 };

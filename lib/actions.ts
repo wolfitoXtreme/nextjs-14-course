@@ -1,4 +1,5 @@
 'use server';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 import { IShareMealAction, TMealItemForm } from '@/types';
@@ -39,5 +40,7 @@ export const shareMeal: IShareMealAction = async (
   console.log('saved meal:', { meal }); // will log in the terminal 'use server'
 
   await saveMeal(meal);
+  // revalidatePath('/meals', 'layout'); // Revalidates cash for a given path and nested paths on production
+  revalidatePath('/meals'); // Revalidates cash for a given production for path on production
   redirect('/meals');
 };
