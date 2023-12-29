@@ -8,6 +8,10 @@ export interface SampleBI {
   (...args: SampleBT): string;
 }
 
+export interface SampleCI {
+  (...args: [a: string, b: number]): string;
+}
+
 export interface IHeaderNavigationLink {
   href: string;
   children?: React.ReactNode;
@@ -20,4 +24,15 @@ export interface IMealsGrid {
 export interface IImagePicker {
   label: string;
   name: string;
+}
+
+export interface IShareMealAction {
+  (
+    prevState: {
+      message: string | null;
+    },
+    formData: FormData,
+  ): Promise<{
+    message: string | null;
+  }>;
 }

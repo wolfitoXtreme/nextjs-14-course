@@ -1,6 +1,10 @@
+'use client';
+import { useFormState } from 'react-dom';
+
 import { shareMeal } from '@/lib/actions';
 
 import ImagePicker from '@/components/Meals/ImagePicker';
+import MealsFormSubmit from '@/components/Meals/MealsFormSubmit';
 
 import styles from './page.module.scss';
 
@@ -24,6 +28,9 @@ const ShareMealPage: React.FC = () => {
   //   console.log('saved meal:', { meal }); // will log in the terminal 'use server'
   // };
 
+  // will handle the form submission in the form action (shareMeal)
+  const [state, formAction] = useFormState(shareMeal, { message: null });
+
   return (
     <>
       <header className={styles.header}>
@@ -33,7 +40,7 @@ const ShareMealPage: React.FC = () => {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={styles.main}>
-        <form className={styles.form} action={shareMeal}>
+        <form className={styles.form} action={formAction}>
           <div className={styles.row}>
             <p>
               <label htmlFor="creator">Your name</label>
@@ -66,8 +73,9 @@ const ShareMealPage: React.FC = () => {
               required></textarea>
           </p>
           <ImagePicker label="your image" name="image" />
+          <p>{state.message}</p>
           <p className={styles.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>
